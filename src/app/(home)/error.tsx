@@ -19,6 +19,10 @@ export default function Error({error, reset} : { error : Error, reset: () => voi
     return (
         <>
             <div className="">
+                {/* starTransiton : ui 변경시 즉각 변경되서 멈추는느낌이 아닌, 서서히 느긋히 변하도록하는 함수 
+                reset을 통해 error 페이지를 다시 정상렌더링 시도 
+                router.refresh 로 서버에 다시한번 데이터 재요청 */}
+
                 <button onClick={ () => {
                       startTransition(() => {
                         router.refresh()
